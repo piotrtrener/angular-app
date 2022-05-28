@@ -1,0 +1,16 @@
+@use 'variables' as v;
+
+body {
+
+    padding: 20px;
+
+}
+
+// .table {
+//     width: 90%;
+//     margin: 20px;
+// }
+
+span {
+    color: v.$color;
+}

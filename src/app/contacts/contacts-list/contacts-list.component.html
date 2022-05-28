@@ -1,1 +1,30 @@
+<table *ngIf="contacts.length > 0; else noContactsAlert" class="table table-sm table-striped">
 
+    <thead>
+        <tr>
+            <th>Lp.</th>
+            <th>Nazwisko</th>
+            <th>Imię</th>
+            <th>Nr telefonu</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let contact of contacts; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ contact.surname }}</td>
+            <td>{{ contact.firstName }}</td>
+            <td>{{ contact.phoneNumber }}</td>
+        </tr>
+    </tbody>
+
+</table>
+
+<button (click)="hideContacts()" class="btn btn-danger btn-sm">Hide contacts</button>
+<button (click)="showContacts()" class="btn btn-info btn-sm">Show contacts</button>
+
+<ng-template #noContactsAlert>
+
+    <p class="no-contacts">Aktualnie brak kontaktów do wyświetlenia...</p>
+
+</ng-template>

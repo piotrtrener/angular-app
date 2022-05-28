@@ -11,9 +11,20 @@ export class ContactsListComponent implements OnInit {
 
   contacts: ContactModel[] = CONTACTS;
 
+  test: string = 'Nowa właściwość testowa';
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.contacts);
+  }
+
+  hideContacts(): void {
+    this.contacts = [];
+  }
+
+  showContacts(): void {
+    this.contacts = CONTACTS;
   }
 
 }
