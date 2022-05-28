@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ContactsListComponent } from './contacts/contacts-list/contacts-list.component';
 import { ContactsModule } from './contacts/contacts.module';
 
 @NgModule({
@@ -12,7 +14,8 @@ import { ContactsModule } from './contacts/contacts.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ContactsModule
+    ContactsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
