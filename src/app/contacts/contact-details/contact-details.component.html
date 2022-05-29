@@ -2,6 +2,9 @@
 <app-header>
     <p content>Szczegóły wybranego kontaktu</p>
 </app-header>
-<p>contact-details works!</p>
+
+<p>Nazwisko: {{ contactDetails.surname }}</p>
+<p>Imię: {{ contactDetails.firstName }}</p>
+<p>Nr telefonu: {{ contactDetails.phoneNumber }}</p>
 
 <button [routerLink]="['/contacts']" class="btn btn-sm btn-info">Wstecz</button>
