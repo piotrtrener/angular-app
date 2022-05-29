@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CONTACTS } from 'src/app/data/contacts-data';
+// import { CONTACTS } from 'src/app/data/contacts-data';
 import { ContactModel } from 'src/app/models/contact-model';
+import { ContactsService } from '../contacts.service';
 
 @Component({
   selector: 'app-contacts-list',
@@ -9,22 +10,28 @@ import { ContactModel } from 'src/app/models/contact-model';
 })
 export class ContactsListComponent implements OnInit {
 
-  contacts: ContactModel[] = CONTACTS;
+  contacts: ContactModel[] = [];
 
-  test: string = 'Nowa właściwość testowa';
-
-  constructor() { }
+  constructor(private contactsService: ContactsService) { }
 
   ngOnInit(): void {
-    console.log(this.contacts);
+    this.loadContacts();
   }
 
-  hideContacts(): void {
-    this.contacts = [];
-  }
+  // hideContacts(): void {
+  //   this.contacts = [];
+  // }
 
-  showContacts(): void {
-    this.contacts = CONTACTS;
+  // showContacts(): void {
+  //   this.loadContacts();
+  // }
+
+  loadContacts(): void {
+    this.contactsService.getContacts().subscribe(contactsServe => {
+
+      this.contacts = contactsServe;
+
+    });
   }
 
 }
