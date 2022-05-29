@@ -14,7 +14,7 @@
     </thead>
 
     <tbody>
-        <tr *ngFor="let contact of contacts; let i = index">
+        <tr [routerLink]="['/contact',contact.id]" *ngFor="let contact of contacts; let i = index">
             <td>{{ i + 1 }}</td>
             <td>{{ contact.surname }}</td>
             <td>{{ contact.firstName }}</td>
